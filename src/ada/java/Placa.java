@@ -1,18 +1,18 @@
 package ada.java;
 
-public class Madera {
-    private Integer tipo;
+public class Placa {
+    private Integer modelo;
     private Double precio;
     private static final Double COSTO_PLACA=3000.00;
 
-    public Madera(Integer tipo) {
-        this.tipo = tipo;
+    public Placa(Integer tipo) {
+        this.modelo = tipo;
         precio = COSTO_PLACA;
         if (tipo==4 || tipo==5)  precio+=COSTO_PLACA * 20 / 100;
     }
 
-    public Integer getTipo() {
-        return tipo;
+    public Integer getModelo() {
+        return modelo;
     }
 
     public Double getPrecio() {
@@ -20,7 +20,7 @@ public class Madera {
     }
 
     public void mostrarDatos(){
-        System.out.print("Madera " + tipo);
+        System.out.print("Placa " + modelo);
         System.out.print(" (" + precio + ")");
     }
 

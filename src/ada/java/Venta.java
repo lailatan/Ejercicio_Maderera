@@ -34,11 +34,11 @@ public class Venta {
         return items;
     }
 
-    public Boolean agregarItem(Madera madera, Integer cantidadCortes) {
+    public Boolean agregarItem(Placa Placa, Integer cantidadCortes) {
         if (cliente.getTopeCortes()>0 && cliente.getTopeCortes()<cantidadCortes)
             return false;
         else {
-            items.add(new Item_venta(madera,cantidadCortes));
+            items.add(new Item_venta(Placa,cantidadCortes));
             return true;
         }
     }

@@ -21,9 +21,9 @@ Cliente     --> Tipo (Corporativos piden entera o hasta 2 cortes)
 Venta       --> Cliente
             --> items
                 fecha retiro (los primeros 10 días del mes, tiene un 20% de descuento)
-item Venta --> Madera
+item Venta -->  Placa
                 cantidad contes (150$)
-Madera      --> modelo (5 modelos)
+Placa      -->  modelo (5 modelos)
                 precio (base 3000$, 4 y 5 20% mas)
 
 */
@@ -31,31 +31,33 @@ public class Maderera {
 
     public static void main(String[] args) {
         List<Venta> ventas = new ArrayList<>();
-        Madera madera1=new Madera(1);
-        Madera madera2=new Madera(2);
-        Madera madera3=new Madera(3);
-        Madera madera4=new Madera(4);
-        Madera madera5=new Madera(5);
+        Placa Placa1 =new Placa(1);
+        Placa Placa2 =new Placa(2);
+        Placa Placa3 =new Placa(3);
+        Placa Placa4 =new Placa(4);
+        Placa Placa5 =new Placa(5);
 
         Cliente cliente1 = new Cliente("ConstruNorte S.A.", "Corporativo");
         Cliente cliente2 = new Cliente("Jose Luis", "Particular");
 
         Venta venta1 = new Venta(1,cliente1, LocalDate.of(2021,2,20));
-        if (!venta1.agregarItem(madera1,10))
+        if (!venta1.agregarItem(Placa1,10))
             System.out.println("No se pueden agregar esta venta con 10 cortes");
-        if (!venta1.agregarItem(madera2,2))
+        if (!venta1.agregarItem(Placa2,2))
             System.out.println("No se pueden agregar esta venta.");
         ventas.add(venta1);
 
         Venta venta2 = new Venta(2,cliente2, LocalDate.of(2021,3,5));
-        if (!venta2.agregarItem(madera1,10))
+        if (!venta2.agregarItem(Placa1,10))
+            System.out.println("No se pueden agregar esta venta.");
+        if (!venta2.agregarItem(Placa5,0))
             System.out.println("No se pueden agregar esta venta.");
         ventas.add(venta2);
 
         Venta venta3 = new Venta(3,cliente1, LocalDate.of(2021,3,10));
-        if (!venta3.agregarItem(madera4,2))
+        if (!venta3.agregarItem(Placa4,2))
             System.out.println("No se pueden agregar esta venta.");
-        if (!venta3.agregarItem(madera1,1))
+        if (!venta3.agregarItem(Placa1,1))
             System.out.println("No se pueden agregar esta venta.");
         ventas.add(venta3);
 
